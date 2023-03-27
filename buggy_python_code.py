@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import sys
 import os
 import yaml
@@ -39,7 +37,7 @@ def fetch_website(urllib_version, url):
 
 def load_yaml(filename):
     stream = open(filename)
-    deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
+    deserialized_data = yaml.safe_load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
 
 def authenticate(password):
